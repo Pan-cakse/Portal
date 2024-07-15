@@ -18,9 +18,9 @@ def version_1(app: FastAPI):
             return { 404: {"description": "Invalid version"} }
 
         if (branch != None and target != None):
-            return RedirectResponse(f"https://github.com/PlazmaMC/Plazma/tree/{branch}/{target}")
+            return RedirectResponse(f"https://github.com/IceCreamMC/IceCream/tree/{branch}/{target}")
 
-        return RedirectResponse(f"https://github.com/PlazmaMC/Plazma/tree/{versions[version]}/{version}")
+        return RedirectResponse(f"https://github.com/IceCreamMC/IceCream/tree/{versions[version]}/{version}")
 
     @router.get("/build", status_code = 308)
     @router.get("/build/{version:str}", status_code = 308)
@@ -28,7 +28,7 @@ def version_1(app: FastAPI):
         if version not in versions:
             return { 404: {"description": "Invalid version"} }
 
-        return RedirectResponse(f"https://img.shields.io/github/actions/workflow/status/PlazmaMC/Plazma/release.yml?style=for-the-badge&label=%20&branch={versions[version]}/{version}")
+        return RedirectResponse(f"https://img.shields.io/github/actions/workflow/status/IceCreamMC/IceCream/release.yml?style=for-the-badge&label=%20&branch={versions[version]}/{version}")
 
     def badge():
         colors = ["gray", "blue", "success", "aqua", "red", "purple", "yellow", "white"]
@@ -75,7 +75,7 @@ def version_1(app: FastAPI):
             if len(types) < target:
                 return { 404: {"description": "Invalid target type"} }
 
-            return RedirectResponse(f"https://github.com/PlazmaMC/Plazma/releases/download/build/{version}/latest/plazma-{types[target][0]}-{version}-R0.1-SNAPSHOT-{types[target][1]}.jar")
+            return RedirectResponse(f"https://github.com/IceCreamMC/IceCream/releases/download/build/{version}/latest/icecream-{types[target][0]}-{version}-R0.1-SNAPSHOT-{types[target][1]}.jar")
     download()
 
     app.include_router(router)
