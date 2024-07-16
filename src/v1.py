@@ -75,7 +75,7 @@ def version_1(app: FastAPI):
             if len(types) < target:
                 return { 404: {"description": "Invalid target type"} }
 
-            return RedirectResponse(f"https://github.com/IceCreamMC/IceCream/releases/download/build/{version}/latest/icecream-{types[target][0]}-{version}-R0.1-SNAPSHOT-{types[target][1]}.jar")
+            return RedirectResponse(f"https://github.com/IceCreamMC/IceCream/releases/download/{version}/IceCream-paperclip-{mcVersion}-R0.1-SNAPSHOT-mojmap.jar")
     download()
 
     app.include_router(router)
