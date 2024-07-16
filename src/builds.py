@@ -1,19 +1,43 @@
-import requests
-from versions import version
-
-def download_build(build):
-    url = f"https://github.com/IceCreamMC/IceCream/releases/download/{build}/IceCream-paperclip-{version}-R0.1-SNAPSHOT-mojmap.jar"
-
-    response = requests.get(url, allow_redirects=True)
-
-    if response.status_code == 200:
-        file_name = f"IceCream-paperclip-{version}-R0.1-SNAPSHOT-mojmap.jar"
-        with open(file_name, 'wb') as file:
-            file.write(response.content)
-        print(f"Build {build} downloaded successfully as {file_name}")
-    else:
-        print(f"Failed to download build {build}. HTTP status code: {response.status_code}")
-
-build_number = input("Enter the build number: ")
-
-download_build(build)
+global builds
+builds = {
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "45",
+    "46",
+    "47",
+    "48",
+    "49",
+    "50",
+    "51",
+    "52",
+    "53",
+    }
