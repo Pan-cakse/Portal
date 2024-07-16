@@ -28,7 +28,7 @@ def version_1(app: FastAPI):
         if version not in versions:
             return { 404: {"description": "Invalid version"} }
 
-        return RedirectResponse(f"https://img.shields.io/github/actions/workflow/status/IceCreamMC/IceCream/release.yml?style=for-the-badge&label=%20&branch={versions[version]}/{version}")
+        return RedirectResponse(f"https://img.shields.io/github/actions/workflow/status/IceCreamMC/IceCream/build.yml?style=for-the-badge&label=%20&branch={versions[version]}/{version}")
 
     def badge():
         colors = ["gray", "blue", "success", "aqua", "red", "purple", "yellow", "white"]
